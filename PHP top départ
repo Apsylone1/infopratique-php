@@ -12,7 +12,7 @@
         <?php
         $ageDuVisiteur = 10;//ces une variable a nombre entier 
         $ageDuVisiteur = 35;// ces la dérnier variable de ageDuVisiteur qui est prise en compte 
-        echo $ageDuVisiteur; //echo sert a fair apparaitre la variable appeler 0.
+        echo $ageDuVisiteur; //echo sert a fair apparaitre la variable appeler .
          $prix = 25.5; //variable qui stoque une Valeur decimale (attention se n'est pas une virgule mais un points )
         echo $prix;
         $Message = "Salut la CCI"; //Varible qui stoque du texte 
