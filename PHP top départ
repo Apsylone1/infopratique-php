@@ -7,12 +7,25 @@
     <body>
         <h1>Ma page web</h1>
         
-        /*stocage de varible */
+        
 
-        <?php
+        <?php//stocage de varible
         $ageDuVisiteur = 10;//ces une variable a nombre entier 
         $ageDuVisiteur = 35;// ces la dérnier variable de ageDuVisiteur qui est prise en compte 
         echo $ageDuVisiteur; //echo sert a fair apparaitre la variable appeler .
+        
+        //voici comment stoker une variable dans une phrase 
+        
+        //soie cette fasson peut recomander 
+       echo "le visiteur a $ageDuVisiteur ans  " // car il faut essayer d'eviter de mélanger le texte avec une variable 
+        
+        //soie 
+        echo 'le visiteur a ' .$ageDuVisiteur. ' ans '; 
+      /* il y a juste 1e guimer qui enveloppe la totaliter du texte et un 
+        espace entre les guimer interieur/point/variable de chaque coter .*/
+
+
+
          $prix = 25.5; //variable qui stoque une Valeur decimale (attention se n'est pas une virgule mais un points )
         echo $prix;
         $Message = "Salut la CCI"; //Varible qui stoque du texte 
@@ -22,6 +35,12 @@
 
 
         ?>
+<?php
+$prix = 2.5 ;
+$quantite = 10 ; 
+$total = $prix*$quantite;
+echo 'cela coute ' .$total. ' euros.';
+?>
 
 
 
