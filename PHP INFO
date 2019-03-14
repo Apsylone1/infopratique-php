@@ -42,6 +42,13 @@ $total = $prix*$quantite;
 echo 'cela coute ' .$total. ' euros.';
 ?>
 
+<?php 
+/*Rien (NULL) : aussi bizarre que cela puisse paraître,
+ on a parfois besoin de dire qu'une variable ne contient rien.
+  Rien du tout. On indique donc qu'elle vautNULL. Ce n'est pas 
+  vraiment un type de données, mais plutôt l'absence de type. */
+
+?>
 
 
         <p>Aujourd'hui nous sommes le <?php echo date('d/m/Y h:i:s'); ?>.</p>
