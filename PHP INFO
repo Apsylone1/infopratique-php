@@ -9,44 +9,161 @@
         
         <?php /*les diferents type de variable en PHP */?>
 
-        <?php//stocage de varible
+        <?php
+        //Le typeint(nombre entier)
         $ageDuVisiteur = 10;//ces une variable a nombre entier 
         $ageDuVisiteur = 35;// ces la dérnier variable de ageDuVisiteur qui est prise en compte 
         echo $ageDuVisiteur; //echo sert a fair apparaitre la variable appeler .
         
-        //voici comment stoker une variable dans une phrase 
+        //Afficher et concaténer des variables
+
+        //Concaténer avec des guillemets doubles
         
-        //soie cette fasson peut recomander 
-       echo "le visiteur a $ageDuVisiteur ans  " // car il faut essayer d'eviter de mélanger le texte avec une variable 
+        /*Avec des guillemets doubles, c'est le plus simple. 
+        Vous pouvez écrire le nom de la variable au milieu du texte et il sera remplacé par sa valeur. :*/
+
+        $age_du_visiteur = 17;
+        echo "Le visiteur a $age_du_visiteur ans";/*En effet, lorsque vous utilisez des guillemets doubles,
+         les variables qui se trouvent à l'intérieur sont analysées et remplacées par leur vraie valeur.
+          Ça a le mérite d'être une solution facile à utiliser, mais je vous recommande plutôt celle des guillemets simples*/
+       
+       // Concaténer avec des guillemets simples
         
-        //soie 
-        echo 'le visiteur a ' .$ageDuVisiteur. ' ans '; 
-      /* il y a juste 1e guimer qui enveloppe la totaliter du texte et un 
-        espace entre les guimer interieur/point/variable de chaque coter .*/
+       /*$age_du_visiteur = 17;
+       echo 'Le visiteur a $age_du_visiteur ans'; Ne marche pas*/
+       //Ça affiche :Le visiteur a $age_du_visiteur ans.
+      
+
+      // Miséricorde ! On ne peut pas concaténer du texte avec des guillemets simples ?
+       /* Eh bien si ! Mais cette fois, il va falloir écrire la variable en dehors 
+       des guillemets et séparer les éléments les uns des autres à l'aide d'un point. Regardez :*/
+
+        $age_du_visiteur = 17;
+        echo 'Le visiteur a ' . $age_du_visiteur . ' ans';
+
+       /* Ça a l'air bien plus compliqué, mais en fait 
+       c'est cette méthode qu'utilisent la plupart des programmeurs
+        expérimentés en PHP. En effet, le code est plus lisible, 
+        on repère bien la variable alors que tout à l'heure elle était 
+        comme « noyée » dans le texte. D'autre part, votre éditeur de texte
+         devrait vous colorer la variable, ce qu'il ne faisait pas pour le code précédent. .*/
 
 
+         /*info : Il faut noter aussi que cette méthode d'écriture
+          est un chouïa plus rapide car PHP voit de suite où se trouve 
+          la variable et n'a pas besoin de la chercher au milieu du texte.*/
 
+
+       //Le typefloat(nombre décimal)
          $prix = 25.5; //variable qui stoque une Valeur decimale (attention se n'est pas une virgule mais un points )
         echo $prix;
+       // Le type string
+        /*Ce type permet de stocker du texte. 
+        Pour cela, vous devez entourer votre texte de 
+        guillemets doubles"" ou de guillemets simples''
+        (attention, ce sont des apostrophes).
+        
+        Voici deux exemples, l'un avec des guillemets simples et l'autre avec des guillemets doubles : */ 
+
         $Message = "Salut la CCI"; //Varible qui stoque du texte 
         echo $Message;
-        $ouiOuNon = true ;// varible qui stoque un bolléen (vrais ou faux ) 
-        echo $ouiOuNon; 
+        $nom_du_visiteur = 'Fabrice';
+        echo $nom_du_visiteur ;
+        /*Attention, petit piège : 
+        si vous voulez insérer un guillemet simple alors que le texte 
+        est entouré de guillemets simples, il faut l'échapper en insérant un antislash devant.
+         Il en va de même pour les guillemets doubles. Voici un exemple pour bien comprendre :*/
+        <?php
+         $variable = 'Je m\'appelle Fabrice';
+         $variable = "Mon \"nom\" est Fabrice";
 
+         /*En effet, si vous oubliez de mettre un antislash, 
+         PHP va croire que c'est la fin de la chaîne et il ne comprendra pas le texte qui suivra 
+         (vous aurez en fait un messageParse error).
+         Vous pouvez en revanche insérer sans problème des guillemets simples
+          au milieu de guillemets doubles et inversement :*/
+          <?php
+            $variable = 'Mon "nom" est Fabrice';
+            $variable = "Je m'appelle Fabrice";
+          ?>
+         ?>
+
+        <?php  //Le typebool(booléen)
+        /*Pour dire si une variable vaut vrai ou faux,
+         vous devez écrire le mottrueoufalsesans guillemets autour 
+         (ce n'est pas une chaîne de caractères !). 
+         Je vous conseille de bien choisir le nom de votre variable pour que l'on comprenne ce que ça signifie. 
+
+         Voyez vous-mêmes :*/
+
+        
+        $je_suis_un_zero = false;
+        $je_suis_bon_en_php = true;
+
+         ?>
 
         ?>
-<?php //il est possible de faire des calcule en php 
+<?php //Faire des calculs simples 
+
+
+//Les opérations de base : addition, soustraction…
+
+//Voici quelques exemples :
+
+
+$nombre = 2 + 4; // $nombre prend la valeur 6
+$nombre = 5 - 1; // $nombre prend la valeur 4
+$nombre = 3 * 5; // $nombre prend la valeur 15
+$nombre = 10 / 2; // $nombre prend la valeur 5
+
+// Allez on rajoute un peu de difficulté
+$nombre = 3 * 5 + 1; // $nombre prend la valeur 16
+$nombre = (1 + 2) * 2; // $nombre prend la valeur 6
+
 $prix = 2.5 ;
 $quantite = 10 ; 
 $total = $prix*$quantite;
 echo 'cela coute ' .$total. ' euros.';
 ?>
+<?php
+$nombre = 10;
+$resultat = ($nombre + 5) * $nombre; // $resultat prend la valeur 150
+
+//Le modulo
+
+/*Il est possible de faire un autre type d'opération un peu moins connu :
+ le modulo. Cela représente le reste de la division entière.
+
+Par exemple, 6 / 3 = 2 et il n'y a pas de reste. 
+En revanche, 7 / 3 = 2 (car le nombre 3 « rentre » 2 fois dans le nombre 7) et il reste 1. 
+Vous avez fait ce type de calculs à l'école primaire, souvenez-vous !
+
+Le modulo permet justement de récupérer ce « reste ». 
+Pour faire un calcul avec un modulo, on utilise le symbole%.*/
+
+
+
+$nombre = 10 % 5; // $nombre prend la valeur 0 car la division tombe juste
+$nombre = 10 % 3; // $nombre prend la valeur 1 car il reste 1
+
+
+
+
+
+
+
+?>
+
 
 <?php 
+//Une variable vide avecNULL
+/*Si vous voulez créer une variable qui ne contient rien, 
+vous devez lui passer le mot-cléNULL(vous pouvez aussi l'écrire en minuscules :null).*/
 /*Rien (NULL) : aussi bizarre que cela puisse paraître,
  on a parfois besoin de dire qu'une variable ne contient rien.
   Rien du tout. On indique donc qu'elle vautNULL. Ce n'est pas 
   vraiment un type de données, mais plutôt l'absence de type. */
+$pas_de_valeur = NULL;
 
 ?>
 
