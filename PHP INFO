@@ -57,6 +57,8 @@
        //Le typefloat(nombre décimal)
          $prix = 25.5; //variable qui stoque une Valeur decimale (attention se n'est pas une virgule mais un points )
         echo $prix;
+       
+       
        // Le type string
         /*Ce type permet de stocker du texte. 
         Pour cela, vous devez entourer votre texte de 
