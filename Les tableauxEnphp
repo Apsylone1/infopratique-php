@@ -1,0 +1,32 @@
+
+<?php
+
+$age = array('15 sans la boucle for ','17 sans la boucle for   ','20  sans la boucle for ');//la lecture du tableau se fait a partir de 0 . 1. 2. 3...
+//echo print_r($age);//la fonction print_r sert a afficher et représenter le contenu d'un tableau . 
+echo $age[1];//ici je demande a la variable contenant le tableau $age d'aficher 17 
+
+?>
+
+
+
+
+
+
+<?php
+$personne = array ('Nom' =>'DUJARDIN (foreach)', 'Prénom'=>'Fabrice (foreach)','age'=>'26ans (foreach)');
+//print_r($personne);
+foreach ($personne as $nom) 
+ {
+	echo '<p>' . $nom . '</p>' ; 
+}
+/*la boucle foreach représente le meilleur outil pour utiliser une boucle dans un tableau */
+?>
+
+
+<?php
+$note = array('Mes meilleur note : 15 (boucle for)','Mes meilleur note :18 (boucle for)','Mes meilleur note : 20 (boucle for)');
+for ( $nombredeNote = 0 ; $nombredeNote < 3 ; $nombredeNote++ )
+{
+	echo '<p>' . $note[$nombredeNote] . '</p>';
+}/*l'inconveniant de la boucle for ces qu'il faut savoir le nombre exacte de soue variable présente dans le tableau */
+?>
