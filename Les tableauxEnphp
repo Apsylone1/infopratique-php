@@ -15,10 +15,13 @@ echo $age[1];//ici je demande a la variable contenant le tableau $age d'aficher 
 <?php
 $personne = array ('Nom' =>'DUJARDIN (foreach)', 'Prénom'=>'Fabrice (foreach)','age'=>'26ans (foreach)');
 //print_r($personne);
-foreach ($personne as $nom) 
+foreach ($personne as $libelle => $nom) 
  {
-	echo '<p>' . $nom . '</p>' ; 
+	echo '<p>' . $libelle . ' = '. $nom . '</p>' ; 
 }
+//récapitulatif :  
+//$libelle et le conteneur de la variable exemple ... Nom ou Prénom ou age .
+//Alors que la variable $nom représente la valeur exemple... DUJARDIN ou Fabrice ou 26ans  .
 /*la boucle foreach représente le meilleur outil pour utiliser une boucle dans un tableau */
 ?>
 
@@ -29,4 +32,24 @@ for ( $nombredeNote = 0 ; $nombredeNote < 3 ; $nombredeNote++ )
 {
 	echo '<p>' . $note[$nombredeNote] . '</p>';
 }/*l'inconveniant de la boucle for ces qu'il faut savoir le nombre exacte de soue variable présente dans le tableau */
+?>
+
+
+<?php
+//info pratique print_r :
+/*Parfois, en codant votre site en PHP, 
+vous aurez sous les bras un array et vous voudrez savoir ce qu'il contient,
+ juste pour votre information. Vous pourriez utiliser une boucle for ou, mieux, une boucle foreach.
+ Mais si vous n'avez pas besoin d'une mise en forme spéciale et que vous voulez juste savoir ce que contient l'array,
+  vous pouvez faire appel à la fonction print_r . C'est une sorte de echo spécialisé dans les arrays.
+
+Cette commande a toutefois un défaut :  
+elle ne renvoie pas de code HTML comme <br /> pour les retours à la ligne.
+Pour bien les voir, il faut donc utiliser la balise HTML <pre> qui nous permet d'avoir un affichage plus correct.
+exemple :*/
+$meilleuramie = array('Mon meileur amie et Paul', 'Ensuite Jean Batiste' , 'et pour finir Romain');
+
+echo '<pre>';
+print_r( $meilleuramie );
+echo '</pre>'
 ?>
