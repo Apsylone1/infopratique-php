@@ -1,4 +1,5 @@
 
+
 <?php
 
 $age = array('15 sans la boucle for ','17 sans la boucle for   ','20  sans la boucle for ');//la lecture du tableau se fait a partir de 0 . 1. 2. 3...
@@ -52,4 +53,100 @@ $meilleuramie = array('Mon meileur amie et Paul', 'Ensuite Jean Batiste' , 'et p
 echo '<pre>';
 print_r( $meilleuramie );
 echo '</pre>'
+?>
+
+
+
+<?php
+//Rechercher dans un tableau (OpenClassRoom)
+
+/*
+Nous allons maintenant faire des recherches dans des arrays. 
+Cela vous sera parfois très utile pour savoir si votre array contient ou non certaines informations.
+Nous allons voir trois types de recherches, basées sur des fonctions PHP :
+
+array_key_exists : pour vérifier si une clé existe dans l'array ;
+
+in_array : pour vérifier si une valeur existe dans l'array ;
+
+array_search : pour récupérer la clé d'une valeur dans l'array.
+*/
+
+//Vérifier si une clé existe dans l'array :array_key_exists
+//Exemple :
+
+$nomDemesAnimeaux = array('poule'=>'titi','canard'=>'toto','tortue'=>'tata');
+
+if (array_key_exists( 'poule', $nomDemesAnimeaux))
+{
+	echo 'la clef "poule" se trouve bien dans les cordonnées </br>';
+	//la clef'poule' etant présente dans la variable $nomDemesAnimeaux celle-ci s'affiche .
+}
+
+if (array_key_exists('renard', $nomDemesAnimeaux))
+{
+	echo 'la clef "renard" se trouve bien dans les cordonnées';
+	////la clef'renard' n'etant pas  présente cette fois dans la variable $nomDemesAnimeaux donc celle-ci ne  s'affiche pas .
+}
+
+//Vérifier si une valeur existe dans l'array :in_array(OpenClassRoom)
+/* Le principe est le même quearray_key_exists… mais cette fois on recherche dans les valeurs. in_array renvoie true 
+si la valeur se trouve dans l'array ,false si elle ne s'y trouve pas.
+
+Pour changer un peu de notre array$nomDemesAnimeaux, 
+je vais en créer un nouveau (numéroté) composé de fruits. ;-)*/
+//Exemple:
+
+$fruits = array ('Banane', 'Pomme', 'Poire', 'Cerise', 'Fraise', 'Framboise');
+
+if (in_array('Myrtille', $fruits))
+{
+    echo 'La valeur "Myrtille" se trouve dans les fruits !';
+    //la Valeur'Myrtille' n'etant pas présente dans la variable $fruits celle-ci ne s'affiche pas .
+}
+
+if (in_array('Cerise', $fruits))
+{
+    echo 'La valeur "Cerise" se trouve dans les fruits !';
+    //La valeur Cerise etant présente dans la variable $fruits celle-ci s'affiche .
+
+
+//Récupérer la clé d'une valeur dans l'array :array_search (OpenClassRoom)
+/*array_search fonctionne comme in_array : 
+il travaille sur les valeurs d'un array. Voici ce que renvoie la fonction :
+si elle a trouvé la valeur, array_searchr envoie la clé correspondante 
+(c'est-à-dire le numéro si c'est un array numéroté, ou le nom de la clé si c'est un array associatif);
+
+si elle n'a pas trouvé la valeur,array_searchr envoie false.*/
+//Exemple : On reprend l'array numéroté avec les fruits .
+
+$position = array_search('Fraise', $fruits);
+echo '"Fraise" se trouve en position ' . $position . '<br />';
+
+$position = array_search('Banane', $fruits);
+echo '"Banane" se trouve en position ' . $position;
+
+/*Je sais que je me répète, mais n'oubliez pas qu'un array numéroté commence à 0 !
+ Cela explique donc pourquoi on nous répond que « Banane » se trouve en position 0.*/
+
+}
+
+/*En résumé
+Les tableaux (ou arrays) sont des variables représentées sous forme de tableau. 
+Elles peuvent donc stocker de grandes quantités d'informations.
+
+Chaque ligne d'un tableau possède une clé (qui permet de l'identifier) et une valeur.
+
+Il existe deux types de tableaux :
+
+les tableaux numérotés : 
+chaque ligne est identifiée par une clé numérotée. La numérotation commence à partir de 0 ;
+
+les tableaux associatifs : 
+chaque ligne est identifiée par une courte chaîne de texte.
+
+Pour parcourir un tableau, on peut utiliser la boucleforque l'on connaît déjà, mais aussi la boucle foreach qui est dédiée aux tableaux.
+
+Il existe de nombreuses fonctions permettant de travailler sur des tableaux et notamment d'effectuer des recherches.*/
+
 ?>
