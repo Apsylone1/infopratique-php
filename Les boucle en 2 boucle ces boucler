@@ -1,0 +1,20 @@
+<?php
+$répét = 0;//variable a prendre en compte 
+while ($répét < 10)//tant que $répét est inferieur a 10 la phrase fonctionne .
+{
+	echo '<p> Bonjour chaque matin je fait des pompe allais lets go ' . $répét . ' en soufle  </p>';
+	$répét++; // la variable $répét se rajoute idéfiniment tant que $répét<10
+}
+
+?>
+
+
+
+<?php 
+for ( $répétitions=0 ; $répétitions < 10 ; $répétitions++ ) // méme principe de fonctionement avec comme interer de pouvoir touts fair dans la boucle for
+// en initialise $répétitions=0 puis en dit tant que $répétitions < 10  en  lui rajoute  nombre de fois $répétitions++ echo echo'<p>ces cool ...
+{ 
+	echo'<p>ces cool les boucle for compte avec moi  ' . $répétitions .'</p>';
+}
+?>
+
