@@ -1,5 +1,4 @@
 
-
 <?php
 
 $age = array('15 sans la boucle for ','17 sans la boucle for   ','20  sans la boucle for ');//la lecture du tableau se fait a partir de 0 . 1. 2. 3...
@@ -107,7 +106,7 @@ if (in_array('Myrtille', $fruits))
 
 if (in_array('Cerise', $fruits))
 {
-    echo 'La valeur "Cerise" se trouve dans les fruits !';
+    echo 'La valeur "Cerise" se trouve dans les fruits! </br></br>';
     //La valeur Cerise etant présente dans la variable $fruits celle-ci s'affiche .
 
 
