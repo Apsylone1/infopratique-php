@@ -1,0 +1,218 @@
+<?php
+$phrase ='Bonjour je suis une phrase plus longue que aux début ';
+$nombresDeCaractére = strlen($phrase);
+echo 'il y a ' . $nombresDeCaractére . ' caractére dans cette phrase </br>';
+
+$phraseMelanger = str_shuffle($phrase);
+echo $phraseMelanger ;
+//a savoir sur cette dérnier utiliser il a 2 autre fason de le dire qui fonctionne tout aussi bien .
+
+//echo str_shuffle($phrase); c'est une fasson de l'ecrire 
+//ou encore 
+//echo str_shuffle(Bonjour je suis une phrase plus longue que aux début) en mais directement la phrase entre parenthése .
+
+
+
+?>
+<?php
+//Récupérer la date(OpenClassRoom)
+/*Nous allons découvrir la fonction qui renvoie l'heure et la date.
+ Il s'agit de date(un nom facile à retenir, avouez !). Cette fonction peut donner beaucoup d'informations. 
+ Voici les principaux paramètres à connaître :
+
+Paramètre      Description
+
+H                Heure
+
+i                Minute
+
+d                 Jour
+
+m                 Mois
+
+Y                Année
+*/
+//Attention ! Respectez les majuscules/minuscules, c'est important !
+
+
+$jours = date ('d');
+$mois = date ('m');
+$annee = date ('Y');
+
+$heure = date('H');
+$minute = date ('i');
+
+echo ' </br> </br> bonjour nous somme le ' . $jours . '/' . $mois . '/' . $annee . ' et il est exactement ' . $heure . 'h' . $minute ;
+
+/*Et voilà le travail ! On a pu afficher la date et l'heure en un clin d'œil.
+ (n'hésitez donc pas à essayer d'exécuter ce code source ).*/
+
+
+?>
+<?php
+/*
+Bien que PHP propose des centaines et des centaines de fonctions 
+(j'insiste, mais il faut dire qu'il y en a tellement !),
+ parfois il n'y aura pas ce que vous cherchez et il faudra écrire vous-mêmes la fonction. 
+ C'est une façon pratique d'étendre les possibilités offertes par PHP.
+
+Quand écrire une fonction ? 
+En général, si vous effectuez des opérations un peu complexes que vous pensez avoir besoin de refaire régulièrement,
+ il est conseillé de créer une fonction.
+
+Nous allons découvrir la création de fonctions à travers deux exemples :
+
+l'affichage d'un message de bienvenue en fonction du nom ;
+
+le calcul du volume d'un cône.
+*/
+
+//Premier exemple : dis bonjour au Monsieur(OpenClassRooms)
+/*C'est peut-être un peu fatigant de dire bonjour à chacun de ses visiteurs, non ?
+ Ça serait bien de le faire automatiquement… Les fonctions sont justement là pour nous aider !
+Regardez le code ci-dessous :*/
+
+$nom = 'Sandra';
+echo '<p>Bonjour, ' . $nom . ' !(sans function )<br /></p> ';
+
+$nom = 'Patrick';
+echo '<p>Bonjour, ' . $nom . ' !(sans function )<br /></p>';
+
+$nom = 'Claude';
+echo '<p>Bonjour, ' . $nom . ' !(sans function )<br /></p>';
+
+
+//Vous voyez, c'est un peu fatigant à la longue… Alors nous allons créer une fonction qui le fait à notre place !
+
+
+function direBonjour($nom)
+{
+	echo '<p>bonjour ' . $nom . ' Comment vas tu ? (avec function )</p>';
+}
+direBonjour('rendolphe');
+direBonjour('arthur');
+direBonjour('fred');
+direBonjour('franck');
+
+/*Alors qu'y a-t-il de différent ici ? 
+C'est surtout en haut qu'il y a une nouveauté : 
+c'est la fonction. En fait, les lignes en haut permettent de définir la fonction
+ (son nom, ce qu'elle est capable de faire, etc.).
+  Elles ne font rien de particulier, mais elles disent à PHP : 
+  « Une fonction direBonjour existe maintenant ».
+
+Pour créer une fonction,
+ vous devez taper function(en français, ça veut dire « fonction »). 
+ Ensuite, donnez-lui un nom. Par exemple, celle-ci s'appelle direBonjour.
+
+Ce qui est plus particulier après, c'est ce qu'on met entre parenthèses :
+ il y a une variable. C'est le paramètre dont a besoin la fonction pour travailler,
+  afin qu'elle sache à qui elle doit dire bonjour dans notre cas. 
+  Notre fonction doit forcément être appelée avec un paramètre (le nom) sans quoi elle ne pourra pas travailler.*/
+
+/*Vous avez peut-être remarqué que cette ligne est la seule à ne pas se terminer par un point-virgule. 
+C'est normal, il ne s'agit pas d'une instruction mais juste d'une « carte d'identité » de la fonction (son nom, ses paramètres…).*/
+
+/*
+Ensuite, vous repérez des accolades. Elles permettent de marquer les limites de la fonction.
+ Cette dernière commence dès qu'il y a un{et se termine lorsqu'il y a un}.
+  Entre les deux, il y a son contenu.
+
+Ici, la fonction contient une seule instruction (echo). 
+J'ai fait simple pour commencer mais vous verrez qu'en pratique,
+ une fonction contient plus d'instructions que cela.
+
+Voilà, la fonction est créée,
+ vous n'avez plus besoin d'y toucher. 
+ Après, pour faire appel à elle, 
+ il suffit d'indiquer son nom, et de préciser
+  ses paramètres entre parenthèses. 
+  Enfin, il ne faut pas oublier le fameux point-virgule ( ; ) car il s'agit d'une instruction.
+   Par exemple :
+   */
+direBonjour('delphin');
+
+//conseil :
+/*Un conseil pour que vous vous entraîniez sur les fonctions :
+ basez-vous sur mes exemples et essayez de les retoucher petit à petit 
+ pour voir ce que ça donne. Il peut y avoir des fonctions très simples comme des fonctions très compliquées,
+  alors allez-y prudemment.*/
+
+//Deuxième exemple : calculer le volume d'un cône 
+  /*Allez, on passe à la vitesse supérieure. La fonctionDireBonjourque l'on a créée ne renvoyait aucune valeur, elle se contentait d'effectuer des actions (afficher un texte, dans le cas présent). Maintenant, nous allons créer une fonction qui renvoie une valeur.
+
+Ici notre fonction va servir à faire un calcul : 
+le calcul du volume d'un cône. 
+Le principe est le suivant :
+ vous donnez à la fonction le rayon et la hauteur du cône, elle travaille et vous renvoie le volume que vous cherchiez.
+
+ Bon : tout d'abord, il faut connaître la formule pour calculer le volume d'un cône. 
+ Vous avez oublié comment on fait ? 
+Il faut connaître le rayon de la base et la hauteur. 
+La formule à utiliser pour trouver le volume est :
+rayon2×π×hauteur×13 
+*/
+
+// Calcul du volume d'un cône de rayon 5 et de hauteur 2
+$volume = 5 * 5 * 3.14 * 2 * (1/3);
+echo 'Le volume du cône de rayon 5 et de hauteur 2 est : ' . $volume . ' cm<sup>3</sup><br />';
+
+// Calcul du volume d'un cône de rayon 3 et de hauteur 4
+$volume = 3 * 3 * 3.14 * 4 * (1/3);
+echo '</br>Le volume du cône de rayon 3 et de hauteur 4 est : ' . $volume . ' cm<sup>3</sup><br />';
+
+/*
+Nous allons donc créer une fonction VolumeCone, qui va calculer 
+le volume du cône en fonction du rayon et de la hauteur. 
+
+Cette fonction ne va rien afficher, 
+on veut juste qu'elle nous renvoie le volume qu'on cherche.
+
+Regardez attentivement le code ci-dessous, il présente deux nouveautés :
+*/
+
+// Ci-dessous, la fonction qui calcule le volume du cône
+function VolumeCone($rayon, $hauteur)
+{
+   $volume = $rayon * $rayon * 3.14 * $hauteur * (1/3); // calcul du volume
+   return $volume; // indique la valeur à renvoyer, ici le volume
+}
+
+$volume = VolumeCone(3, 1);
+echo '</br>Le volume d\'un cône de rayon 3 et de hauteur 1 est de ' . $volume . ' </br>' ;
+/*
+Regardez bien la fonction, il y a l'instruction :return $volume;.
+Cette instruction indique ce que doit renvoyer la fonction. 
+Ici, elle renvoie le volume. Si vous aviez tapé return 15, ça aurait à chaque fois affiché un volume de 15 
+(c'est un peu idiot j'en conviens, mais faites l'essai !).
+
+La fonction renvoie une valeur, que l'on doit donc récupérer dans une variable :
+*/
+
+/*
+Ensuite, on peut afficher ce que contient la variable à l'aide d'une instructionecho.
+
+Les possibilités de création de fonctions sont quasi-infinies.
+ Il est clair que normalement, vous n'allez pas avoir à créer de fonction qui calcule le volume d'un cône 
+ (qui est assez fou pour faire ça ?). En fait, tout ce que je vous demande ici, c
+ 'est de comprendre qu'une fonction peut se révéler très pratique et vous faire gagner du temps.
+ */
+
+$volume = VolumeCone(5, 4);
+echo '</br>Le volume d\'un cône de rayon 5 et de hauteur 4 est de ' . $volume;
+
+/*
+En résumé
+Les fonctions sont des blocs de code qui exécutent des instructions en fonction de certains paramètres.
+
+Les fonctions ont généralement une entrée et une sortie. 
+
+Par exemple, si on donne la valeur 4 à la fonction de calcul du cube, celle-ci renvoie 64 en sortie.
+
+PHP propose des centaines et des centaines de fonctions prêtes à l'emploi pour tous types de tâches :
+ envoyer un e-mail, récupérer l'heure, crypter des mots de passe, etc.
+
+Si PHP ne propose pas la fonction dont on a besoin, il est possible de la créer avec le mot-clé function.
+*/
+
+?>
